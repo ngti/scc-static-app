@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Swiss Climate Challenge - Thank You</title>
-    <link rel="stylesheet" href="styles.css">
     <style>
         body {
             font-family: 'TheSans Swisscom Light', sans-serif;
@@ -53,9 +52,6 @@
             console.log('Supported languages:', supportedLanguages);
             const lang = supportedLanguages.includes(userLang) ? userLang : 'en';
             console.log('Selected language:', lang);
-            const userLang = navigator.language.slice(0, 2);
-            const supportedLanguages = ['en', 'de', 'fr', 'it'];
-            const lang = supportedLanguages.includes(userLang) ? userLang : 'en';
             
             document.getElementById(`container-${lang}`).classList.add('active');
             console.log('Activated container:', `container-${lang}`);
