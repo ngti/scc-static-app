@@ -48,16 +48,23 @@
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const userLang = navigator.language.slice(0, 2);
+            console.log('User language:', userLang);
+            const supportedLanguages = ['en', 'de', 'fr', 'it'];
+            console.log('Supported languages:', supportedLanguages);
+            const lang = supportedLanguages.includes(userLang) ? userLang : 'en';
+            console.log('Selected language:', lang);
+            const userLang = navigator.language.slice(0, 2);
             const supportedLanguages = ['en', 'de', 'fr', 'it'];
             const lang = supportedLanguages.includes(userLang) ? userLang : 'en';
             
             document.getElementById(`container-${lang}`).classList.add('active');
+            console.log('Activated container:', `container-${lang}`);
         });
     </script>
 </head>
 <body>
     <div id="container-en" class="container language-container active">
-        <img src="scc-clouds.svg" alt="Swiss Climate Challenge Clouds Illustration">
+        <img src="scc-clouds.svg" alt="">
         <h1>Swiss Climate Challenge</h1>
         <p>Thank you for being part of our journey.</p>
         <p>Swiss Climate Challenge has officially concluded as of December 2024. We are deeply grateful for all your contributions in making a positive impact on our environment.</p>
@@ -68,7 +75,7 @@
     </div>
 
     <div id="container-de" class="container language-container">
-        <img src="scc-clouds.svg" alt="Swiss Climate Challenge Clouds Illustration">
+        <img src="scc-clouds.svg" alt="">
         <h1>Swiss Climate Challenge</h1>
         <p>Vielen Dank, dass Sie Teil unserer Reise waren.</p>
         <p>Swiss Climate Challenge wurde offiziell im Dezember 2024 beendet. Wir sind sehr dankbar für all Ihre Beiträge, die einen positiven Einfluss auf unsere Umwelt hatten.</p>
@@ -79,7 +86,7 @@
     </div>
 
     <div id="container-fr" class="container language-container">
-        <img src="scc-clouds.svg" alt="Swiss Climate Challenge Clouds Illustration">
+        <img src="scc-clouds.svg" alt="">
         <h1>Swiss Climate Challenge</h1>
         <p>Merci d’avoir fait partie de notre aventure.</p>
         <p>Swiss Climate Challenge a officiellement pris fin en décembre 2024. Nous sommes très reconnaissants pour toutes vos contributions ayant eu un impact positif sur notre environnement.</p>
@@ -90,7 +97,7 @@
     </div>
 
     <div id="container-it" class="container language-container">
-        <img src="scc-clouds.svg" alt="Swiss Climate Challenge Clouds Illustration">
+        <img src="scc-clouds.svg" alt="">
         <h1>Swiss Climate Challenge</h1>
         <p>Grazie per aver fatto parte del nostro viaggio.</p>
         <p>Swiss Climate Challenge si è ufficialmente concluso a dicembre 2024. Siamo molto grati per tutti i vostri contributi che hanno avuto un impatto positivo sul nostro ambiente.</p>
