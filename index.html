@@ -13,7 +13,7 @@
         .container {
             text-align: center;
             background: rgb(0, 87, 223);
-            padding: 20px;
+            padding: 20px 40px;
             margin: 20px auto;
             border-radius: 16px;
             box-shadow: 0 6px 12px rgba(0, 53, 163, 0.3);
@@ -53,6 +53,8 @@
             const lang = supportedLanguages.includes(userLang) ? userLang : 'en';
             console.log('Selected language:', lang);
             
+            const containers = document.querySelectorAll('.language-container');
+            containers.forEach(container => container.classList.remove('active'));
             document.getElementById(`container-${lang}`).classList.add('active');
             console.log('Activated container:', `container-${lang}`);
         });
