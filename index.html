@@ -13,7 +13,7 @@
         .container {
             text-align: center;
             background: rgb(0, 87, 223);
-            padding: 20px 40px;
+            padding: 40px 20px;
             margin: 20px auto;
             border-radius: 16px;
             box-shadow: 0 6px 12px rgba(0, 53, 163, 0.3);
@@ -52,7 +52,6 @@
             console.log('Supported languages:', supportedLanguages);
             const lang = supportedLanguages.includes(userLang) ? userLang : 'en';
             console.log('Selected language:', lang);
-            
             const containers = document.querySelectorAll('.language-container');
             containers.forEach(container => container.classList.remove('active'));
             document.getElementById(`container-${lang}`).classList.add('active');
@@ -77,7 +76,7 @@
         <h1>Swiss Climate Challenge</h1>
         <p>Vielen Dank, dass Sie Teil unserer Reise waren.</p>
         <p>Swiss Climate Challenge wurde offiziell im Dezember 2024 beendet. Wir sind sehr dankbar für all Ihre Beiträge, die einen positiven Einfluss auf unsere Umwelt hatten.</p>
-        <p>Gemeinsam haben wir Emissionen verfolgt, sinnvolle Schritte zur Reduzierung unseres CO2-Fußabdrucks unternommen und die Kraft kollektiven Handelns gezeigt. Obwohl unsere App nicht mehr aktiv ist, geht die Mission zur Bekämpfung des Klimawandels weiter.</p>
+        <p>Gemeinsam haben wir Emissionen verfolgt, sinnvolle Schritte zur Reduzierung unseres CO2-Fussabdrucks unternommen und die Kraft kollektiven Handelns gezeigt. Obwohl unsere App nicht mehr aktiv ist, geht die Mission zur Bekämpfung des Klimawandels weiter.</p>
         <p>Wir ermutigen Sie, weiterhin nachhaltige Entscheidungen für unseren Planeten zu treffen. Für weitere Informationen oder um andere Klima-Initiativen zu finden, besuchen Sie bitte <a href="https://www.swisscom.ch/nachhaltigkeit">swisscom.ch/nachhaltigkeit</a>.</p>
         <p>Vielen Dank nochmals für Ihr Engagement und Ihre Unterstützung.</p>
         <p>— Das Swiss Climate Challenge Team</p>
