@@ -4,13 +4,29 @@ This project contains the static shutdown page for the **Swiss Climate Challenge
 
 ## Features
 
-- **Language Support**: The shutdown page supports four languages (English, German, French, and Italian). The page content is selected based on the user's browser language or a query parameter (`userLang`) to override the default selection.
-- **Hosted on GitHub Pages**: The shutdown page is statically hosted on GitHub Pages, under the NGTI account.
-- **DNS and Domain**: The page will be published under the subdomain [app.swissclimatechallenge.ch](https://app.swissclimatechallenge.ch/). The DNS records are managed by <dns.admin@swisscom.com>
+- **Language Support**: The shutdown page supports four languages (English, German, French, and Italian).
+- **Hosted on GitHub Pages**: The shutdown page is statically hosted on GitHub Pages.
+- **DNS and Domain**: The page will be published under the subdomain [app.swissclimatechallenge.ch](https://app.swissclimatechallenge.ch/).
+
+## Language Support
+
+The page is available in the following languages:
+
+- **English (default)**
+- **German**
+- **French**
+- **Italian**
+
+Language selection is determined either by:
+
+- The user's browser settings.
+- The `userLang` parameter passed in the URL.
 
 ## Deployment
 
-This project is deployed using GitHub Pages, and the DNS record must be configured as follows to point to GitHub Pages:
+This project is deployed using GitHub Pages, under the NGTI organisation account. The DNS records for swissclimatechallenge.ch are managed by <dns.admin@swisscom.com>
+
+The DNS record must be configured as follows to point to GitHub Pages:
 
 - **Type**: CNAME
 - **Name**: app.swissclimatechallenge.ch
@@ -18,7 +34,10 @@ This project is deployed using GitHub Pages, and the DNS record must be configur
 
 ## Usage Instructions
 
-- **Languages**: By default, the page will display in English. The mobile client app can pass the language code (`userLang`) in the URL to override this.
+The page is meant for Swiss Climate Challenge mobile clients (iOS and Android) and replaces the web application that provides the application UI.
+
+- **Location**: The page is accessed at [app.swissclimatechallenge.ch](https://app.swissclimatechallenge.ch/).
+- **Languages**: By default, the page will display in English, or in the browsers preferred language if it matches the languages available. The mobile client app can pass the language code (`userLang`) in the URL to override this.
   - Example: `https://app.swissclimatechallenge.ch/?userLang=de` will display the German version of the page.
 
 ## Local Development
@@ -26,8 +45,8 @@ This project is deployed using GitHub Pages, and the DNS record must be configur
 1. **Clone the Repository**:
 
    ```sh
-   git clone https://github.com/ngti/swissclimatechallenge-shutdown.git
-   cd swissclimatechallenge-shutdown
+   git clone https://github.com/ngti/scc-static.git
+   cd scc-static
    ```
 
 2. **Serve Locally**:
@@ -45,17 +64,3 @@ This project is deployed using GitHub Pages, and the DNS record must be configur
 - `index.html`: The main shutdown page HTML file.
 - `scc-clouds.svg`: The SVG illustration used in the shutdown page.
 - `fonts/`: Contains font files for the Swisscom version of TheSans (400 and 700 weights) used by the page.
-
-## Language Support
-
-The page is available in the following languages:
-
-- **English (default)**
-- **German**
-- **French**
-- **Italian**
-
-Language selection is determined either by:
-
-- The user's browser settings.
-- The `userLang` parameter passed in the URL.
