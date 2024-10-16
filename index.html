@@ -62,14 +62,31 @@
     </style>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            const userLang = navigator.language.slice(0, 2);
-            console.log('User language:', userLang);
+            // Get the 'userLang' query parameter from the URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const queryUserLang = urlParams.get('userLang');
+            console.log('URL parameter userLang:', queryUserLang);
+
+            // Get the navigator language
+            const navigatorLang = navigator.language.slice(0, 2);
+            console.log('Navigator language:', navigatorLang);
+
+            // Use the 'userLang' query parameter if set, otherwise use the navigator language
+            const userLang = queryUserLang ? queryUserLang : navigatorLang;
+            console.log('Requested language:', userLang);
+
             const supportedLanguages = ['en', 'de', 'fr', 'it'];
             console.log('Supported languages:', supportedLanguages);
+
+            // Determine the language to use, defaulting to English if unsupported
             const lang = supportedLanguages.includes(userLang) ? userLang : 'en';
-            console.log('Selected language:', lang);
+            console.log('Final language selection:', lang);
+
+            // Find all language containers and clear the .active class
             const containers = document.querySelectorAll('.language-container');
             containers.forEach(container => container.classList.remove('active'));
+          
+            // Find the container for the selected language and set the .active class 
             document.getElementById(`container-${lang}`).classList.add('active');
             console.log('Activated container:', `container-${lang}`);
         });
