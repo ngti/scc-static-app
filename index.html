@@ -64,7 +64,7 @@
         document.addEventListener('DOMContentLoaded', function () {
             // Get the 'userLang' query parameter from the URL
             const urlParams = new URLSearchParams(window.location.search);
-            const queryUserLang = urlParams.get('userLang');
+            const queryUserLang = urlParams.get('userLang') ? urlParams.get('userLang').slice(0, 2) : null;
             console.log('URL parameter userLang:', queryUserLang);
 
             // Get the navigator language
