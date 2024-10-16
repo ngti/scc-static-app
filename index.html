@@ -44,8 +44,10 @@
             width: 80%;
         }
         h1 {
-            color: #ffffff;
             font-size: 1.8em;
+        }
+        h2 {
+            font-weight: 400;
         }
         p {
             font-size: 1em;
@@ -53,7 +55,7 @@
             margin: 1em 0;
         }
         a {
-            color: #ffffff;
+            color: rgb(255, 255, 255);
             text-decoration: none;
             font-weight: bold;
         }
@@ -85,6 +87,7 @@
             const userLang = queryUserLang ? queryUserLang : navigatorLang;
             console.log('Requested language:', userLang);
 
+            // Define the supported languages
             const supportedLanguages = ['en', 'de', 'fr', 'it'];
             console.log('Supported languages:', supportedLanguages);
 
@@ -120,7 +123,6 @@
         // SDK Callback
         function callSdk(action) {
             // Dispatch payloads from web-app to SDK
-            // More details @ https://wiki.swisscom.com/display/SCCD/Web+-+Native+Communication
             try {
                 if (getPlatform() === 'Android' && window.androidClient) {
                     console.log('Android SDK Callback:', action);
@@ -142,7 +144,7 @@
     <div id="container-en" class="container language-container active">
         <img src="scc-clouds.svg" alt="">
         <h1>Swiss Climate Challenge</h1>
-        <p>Thank you for being part of our journey.</p>
+        <h2>Thank you for being part of our journey.</h2>
         <p>Swiss Climate Challenge has officially concluded as of December 2024. We are deeply grateful for all your contributions in making a positive impact on our environment.</p>
         <p>Together, we tracked emissions, took meaningful steps to reduce our carbon footprint, and showed the power of collective action. Though our app is no longer active, the mission to fight climate change continues.</p>
         <p>We encourage you to stay engaged and keep making sustainable choices for our planet. For more information or to find other climate initiatives, please visit <a href="https://www.swisscom.ch/sustainability">swisscom.ch/sustainability</a>.</p>
@@ -153,7 +155,7 @@
     <div id="container-de" class="container language-container">
         <img src="scc-clouds.svg" alt="">
         <h1>Swiss Climate Challenge</h1>
-        <p>Vielen Dank, dass Sie Teil unserer Reise waren.</p>
+        <h2>Vielen Dank, dass Sie Teil unserer Reise waren.</h2>
         <p>Swiss Climate Challenge wurde offiziell im Dezember 2024 beendet. Wir sind sehr dankbar für all Ihre Beiträge, die einen positiven Einfluss auf unsere Umwelt hatten.</p>
         <p>Gemeinsam haben wir Emissionen verfolgt, sinnvolle Schritte zur Reduzierung unseres CO2-Fussabdrucks unternommen und die Kraft kollektiven Handelns gezeigt. Obwohl unsere App nicht mehr aktiv ist, geht die Mission zur Bekämpfung des Klimawandels weiter.</p>
         <p>Wir ermutigen Sie, weiterhin nachhaltige Entscheidungen für unseren Planeten zu treffen. Für weitere Informationen oder um andere Klima-Initiativen zu finden, besuchen Sie bitte <a href="https://www.swisscom.ch/nachhaltigkeit">swisscom.ch/nachhaltigkeit</a>.</p>
@@ -164,7 +166,7 @@
     <div id="container-fr" class="container language-container">
         <img src="scc-clouds.svg" alt="">
         <h1>Swiss Climate Challenge</h1>
-        <p>Merci d’avoir fait partie de notre voyage.</p>
+        <h2>Merci d’avoir fait partie de notre voyage.</h2>
         <p>Swiss Climate Challenge a officiellement pris fin en décembre 2024. Nous sommes très reconnaissants pour toutes vos contributions ayant eu un impact positif sur notre environnement.</p>
         <p>Ensemble, nous avons suivi les émissions, pris des mesures significatives pour réduire notre empreinte carbone et montré la puissance de l’action collective. Bien que notre application ne soit plus active, la mission de lutter contre le changement climatique continue.</p>
         <p>Nous vous encourageons à rester engagés et à continuer à faire des choix durables pour notre planète. Pour plus d’informations ou pour trouver d’autres initiatives climatiques, veuillez visiter <a href="https://www.swisscom.ch/durabilite">swisscom.ch/durabilite</a>.</p>
@@ -175,7 +177,7 @@
     <div id="container-it" class="container language-container">
         <img src="scc-clouds.svg" alt="">
         <h1>Swiss Climate Challenge</h1>
-        <p>Grazie per aver fatto parte del nostro viaggio.</p>
+        <h2>Grazie per aver fatto parte del nostro viaggio.</h2>
         <p>Swiss Climate Challenge si è ufficialmente concluso a dicembre 2024. Siamo molto grati per tutti i vostri contributi che hanno avuto un impatto positivo sul nostro ambiente.</p>
         <p>Insieme, abbiamo monitorato le emissioni, intrapreso azioni significative per ridurre la nostra impronta di carbonio e dimostrato il potere dell’azione collettiva. Sebbene la nostra app non sia più attiva, la missione per combattere il cambiamento climatico continua.</p>
         <p>Vi incoraggiamo a rimanere impegnati e a continuare a fare scelte sostenibili per il nostro pianeta. Per maggiori informazioni o per trovare altre iniziative sul clima, visitate <a href="https://www.swisscom.ch/sostenibilita">swisscom.ch/sostenibilita</a>.</p>
