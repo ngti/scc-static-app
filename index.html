@@ -62,6 +62,9 @@
     </style>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
+            // Notify the SDK that the web app is loaded
+            callSdk('appIsLoaded');
+          
             // Get the 'userLang' query parameter from the URL
             const urlParams = new URLSearchParams(window.location.search);
             const queryUserLang = urlParams.get('userLang') ? urlParams.get('userLang').slice(0, 2) : null;
@@ -90,6 +93,42 @@
             document.getElementById(`container-${lang}`).classList.add('active');
             console.log('Activated container:', `container-${lang}`);
         });
+      
+        // Get SDK host platform 
+        function getPlatform() {
+            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            const isTouchDevice = 'ontouchstart' in window || window.TouchEvent || window.DocumentTouch;
+            if (userAgent.match(/Mac\sOS\sX/i) && isTouchDevice) {
+                return 'iOS';
+            }
+            if (userAgent.match(/iPad/i) || userAgent.match(/iPhone/i) || userAgent.match(/iPod/i)) {
+                return 'iOS';
+            }
+            if (userAgent.match(/Android/i)) {
+                return 'Android';
+            }
+            return 'Desktop';
+        }
+
+        // SDK Callback
+        function callSdk(action) {
+            // Dispatch payloads from web-app to SDK
+            // More details @ https://wiki.swisscom.com/display/SCCD/Web+-+Native+Communication
+            try {
+                if (getPlatform() === 'Android' && window.androidClient) {
+                    console.log('Android SDK Callback:', action);
+                    window.androidClient.callback(action);
+                } else if (getPlatform() === 'iOS' && window.webkit) {
+                    console.log('iOS SDK Callback:', action);
+                    window.webkit.messageHandlers.callback.postMessage(action);
+                }
+                console.log('No SDK Callback made for action:', action);
+                return undefined;
+            } catch (err) {
+                console.log(err);
+                return err;
+            }
+        }
     </script>
 </head>
 <body>
