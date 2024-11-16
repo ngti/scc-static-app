@@ -24,13 +24,15 @@ Language selection is determined either by:
 
 ## Deployment
 
-This project is deployed using GitHub Pages, under the NGTI organisation account. The DNS records for swissclimatechallenge.ch are managed by <dns.admin@swisscom.com>
+This project is deployed using GitHub Pages, under the NGTI organisation account. The DNS records for swissclimatechallenge.ch are managed by <dns.admin@swisscom.com>.
 
-The DNS record must be configured as follows to point to GitHub Pages:
+The DNS record must be configured as follows to point the `app.swissclimatechallenge.ch` subdomain to GitHub Pages:
 
-- **Type**: CNAME
-- **Name**: app.swissclimatechallenge.ch
+- **Type**: `CNAME`
+- **Name**: `app.swissclimatechallenge.ch`
 - **Value**: `ngti.github.io`
+
+To point the `swissclimatechallenge.ch` apex domain to GitHub Pages, follow the instructions in [Manage a custom domain](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site).
 
 ## Usage Instructions
 
