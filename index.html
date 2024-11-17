@@ -27,8 +27,10 @@
             font-weight: 400;
             font-style: normal;
             }
+        html {
+            padding: 44px 0;
+        }
         body {
-            padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
             font-family: 'TheSans', sans-serif;
             background: rgb(0, 63, 196);
             color: rgb(255, 255, 255);
@@ -42,6 +44,7 @@
             box-shadow: 0 6px 12px rgba(0, 53, 163, 0.3);
             max-width: 400px;
             width: 80%;
+            /* height: calc(100% - 0px - 44px - var(--safe-area-inset-top, 0px)); */
         }
         h1 {
             font-size: 1.8em;
